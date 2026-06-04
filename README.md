@@ -151,12 +151,6 @@ Bien nay dat ten AWS key pair do Terraform tao. Private key khong can truyen tu 
 Sau khi chay apply, chup anh man hinh browser mo output `app_url`. Anh/clip do la bang chung URL ALB mo duoc app.
 
 http://hello-alb-1212541323.ap-southeast-2.elb.amazonaws.com/
-```
 
-<img width="828" height="115" alt="image" src="https://github.com/user-attachments/assets/11dfa639-f473-4be2-8105-8630e4bd7692" />
+<img width="839" height="155" alt="image" src="https://github.com/user-attachments/assets/3dd56aad-bb04-41db-a740-5d06422a988e" />
 
-Ket qua ky vong:
-
-```text
-Welcome to Khanh DevOps Lab
-```
