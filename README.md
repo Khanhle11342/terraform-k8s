@@ -154,7 +154,9 @@ http://hello-alb-1212541323.ap-southeast-2.elb.amazonaws.com/
 ```
 
 Ket qua ky vong:
+
 <img width="784" height="111" alt="image" src="https://github.com/user-attachments/assets/83a6b551-4eee-43fe-8487-afec1e705d8d" />
+
 
 ```text
 Welcome to Khanh DevOps Lab
