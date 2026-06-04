@@ -255,20 +255,13 @@ terraform output -raw app_url
 
 Mở URL đó trên browser và chụp ảnh hoặc quay clip màn hình. Ảnh/clip cần thể hiện được:
 
-- URL là DNS của ALB.
-- Browser mở được trang.
-- Nội dung trang hiển thị `Welcome to Khanh DevOps Lab`.
-
-Sau khi có bằng chứng, chạy:
-
-```bash
-terraform destroy -auto-approve
-```
-
-Việc destroy sau khi chấm là cần thiết để tránh tốn chi phí EC2 và ALB trên AWS.
-=======
 http://hello-alb-1212541323.ap-southeast-2.elb.amazonaws.com/
 
 <img width="839" height="155" alt="image" src="https://github.com/user-attachments/assets/3dd56aad-bb04-41db-a740-5d06422a988e" />
 
->>>>>>> da6ad12522d32d051291aa7c7d6e089218fa1fdc
+Sau khi có bằng chứng, chạy:
+```bash
+terraform destroy -auto-approve
+```
+Việc destroy sau khi chấm là cần thiết để tránh tốn chi phí EC2 và ALB trên AWS.
+=======
