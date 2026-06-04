@@ -153,10 +153,9 @@ Sau khi chay apply, chup anh man hinh browser mo output `app_url`. Anh/clip do l
 http://hello-alb-1212541323.ap-southeast-2.elb.amazonaws.com/
 ```
 
+<img width="828" height="115" alt="image" src="https://github.com/user-attachments/assets/11dfa639-f473-4be2-8105-8630e4bd7692" />
+
 Ket qua ky vong:
-
-<img width="784" height="111" alt="image" src="https://github.com/user-attachments/assets/83a6b551-4eee-43fe-8487-afec1e705d8d" />
-
 
 ```text
 Welcome to Khanh DevOps Lab
