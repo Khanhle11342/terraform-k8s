@@ -233,6 +233,7 @@ Biến `key_name` dùng để đặt tên AWS key pair mà Terraform tạo. Priv
 
 Repo hiện tại dùng **root module duy nhất**, chưa tách module con.
 
+<<<<<<< HEAD
 Với quy mô bài tập nhỏ, cấu trúc flat giúp dễ đọc, dễ chấm và dễ hiểu luồng resource. Nếu mở rộng thêm, có thể tách thành các module như:
 
 ```text
@@ -265,3 +266,9 @@ terraform destroy -auto-approve
 ```
 
 Việc destroy sau khi chấm là cần thiết để tránh tốn chi phí EC2 và ALB trên AWS.
+=======
+http://hello-alb-1212541323.ap-southeast-2.elb.amazonaws.com/
+
+<img width="839" height="155" alt="image" src="https://github.com/user-attachments/assets/3dd56aad-bb04-41db-a740-5d06422a988e" />
+
+>>>>>>> da6ad12522d32d051291aa7c7d6e089218fa1fdc
