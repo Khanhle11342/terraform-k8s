@@ -27,7 +27,7 @@ spec:
         image: hashicorp/http-echo:1.0.0
 
         args:
-        - "-text=Hello from 001 Minikube on AWS"
+        - "-text=Welcome to Khanh DevOps Lab"
 
         ports:
 
