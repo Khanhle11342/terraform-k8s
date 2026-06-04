@@ -150,13 +150,11 @@ Bien nay dat ten AWS key pair do Terraform tao. Private key khong can truyen tu 
 
 Sau khi chay apply, chup anh man hinh browser mo output `app_url`. Anh/clip do la bang chung URL ALB mo duoc app.
 
-Neu can kiem tra bang lenh:
-
-```bash
-curl "$(terraform output -raw app_url)"
+http://hello-alb-1212541323.ap-southeast-2.elb.amazonaws.com/
 ```
 
 Ket qua ky vong:
+<img width="784" height="111" alt="image" src="https://github.com/user-attachments/assets/83a6b551-4eee-43fe-8487-afec1e705d8d" />
 
 ```text
 Welcome to Khanh DevOps Lab
