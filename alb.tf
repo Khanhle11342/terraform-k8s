@@ -1,13 +1,13 @@
 resource "aws_lb" "hello" {
 
-  name               = "hello-alb"
+  name = "hello-alb"
 
-  internal           = false
+  internal = false
 
   load_balancer_type = "application"
 
   security_groups = [
-    aws_security_group.ec2_sg.id
+    aws_security_group.alb_sg.id
   ]
 
   subnets = data.aws_subnets.default.ids
@@ -16,11 +16,11 @@ resource "aws_lb" "hello" {
 
 resource "aws_lb_target_group" "hello" {
 
-  name        = "hello-tg"
+  name = "hello-tg"
 
-  port        = 30080
+  port = 30080
 
-  protocol    = "HTTP"
+  protocol = "HTTP"
 
   target_type = "instance"
 
@@ -28,11 +28,11 @@ resource "aws_lb_target_group" "hello" {
 
   health_check {
 
-    path     = "/"
+    path = "/"
 
     protocol = "HTTP"
 
-    port     = "30080"
+    port = "30080"
 
   }
 

@@ -16,7 +16,7 @@ Trước khi chạy, máy local cần có:
 
 - Terraform đã được cài đặt.
 - AWS credentials đã được cấu hình sẵn. Có thể cấu hình bằng `aws configure` hoặc dùng biến môi trường như `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`.
-- AWS account có **default VPC** trong region `ap-southeast-2`, vì repo này đang dùng default VPC thay vì tự tạo VPC mới.
+- AWS account có **default VPC** trong region `ap-southeast-2`, hoặc region khác nếu truyền biến `aws_region`.
 
 Chạy lệnh sau tại thư mục root của repo:
 
@@ -163,7 +163,7 @@ Welcome to Khanh DevOps Lab
 File `manifests/service.yaml` tạo service kiểu `NodePort`, expose app ra port `30080` trên node:
 
 ```text
-Service port: 5678
+Service port: 80
 Target port: 5678
 NodePort: 30080
 ```
@@ -222,12 +222,24 @@ Network dùng **default VPC** thay vì tự tạo VPC mới. Cách này giúp gi
 File `variables.tf` hiện có:
 
 ```hcl
+variable "aws_region" {
+  default = "ap-southeast-2"
+}
+
 variable "key_name" {
-  default = "terraform-k8s"
+  default = "terraform-k8s-generated"
+}
+
+variable "admin_cidr" {
+  default = "0.0.0.0/0"
 }
 ```
 
-Biến `key_name` dùng để đặt tên AWS key pair mà Terraform tạo. Private key không cần truyền từ ngoài vào nữa vì provider `tls` tự tạo trong quá trình apply.
+- `aws_region`: region AWS dùng để tạo tài nguyên. Mặc định là `ap-southeast-2`.
+- `key_name`: tên AWS key pair mà Terraform tạo.
+- `admin_cidr`: dải IP được phép SSH vào EC2 và truy cập Kubernetes API. Mặc định là `0.0.0.0/0` để dễ demo, nhưng khi làm thật nên đổi thành IP cá nhân.
+
+Private key không cần truyền từ ngoài vào nữa vì provider `tls` tự tạo trong quá trình apply.
 
 ## 9. Module
 

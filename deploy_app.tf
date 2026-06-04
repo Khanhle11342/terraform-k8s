@@ -1,5 +1,12 @@
 resource "null_resource" "deploy_app" {
 
+  triggers = {
+    instance_id         = aws_instance.k8s.id
+    minikube_bootstrap  = null_resource.install_minikube.id
+    deployment_manifest = filesha256("manifests/deployment.yaml")
+    service_manifest    = filesha256("manifests/service.yaml")
+  }
+
   depends_on = [
     null_resource.install_minikube
   ]
@@ -13,6 +20,8 @@ resource "null_resource" "deploy_app" {
     host = aws_instance.k8s.public_ip
 
     private_key = tls_private_key.ssh.private_key_pem
+
+    timeout = "10m"
 
   }
 

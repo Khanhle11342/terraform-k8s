@@ -13,11 +13,13 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "k8s" {
 
-  ami           = data.aws_ami.ubuntu.id
+  ami = data.aws_ami.ubuntu.id
 
   instance_type = "t3.small"
 
   key_name = aws_key_pair.k8s.key_name
+
+  associate_public_ip_address = true
 
   vpc_security_group_ids = [
     aws_security_group.ec2_sg.id
